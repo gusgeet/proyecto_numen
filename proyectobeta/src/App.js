@@ -19,7 +19,7 @@ function App() {
       <GlobalStyles />
       <FooterContainer/>
       </>
-      <div>Hola Gus</div>
+      <div>Gus Gus</div>
     </div>
     
   );
