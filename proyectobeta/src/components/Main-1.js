@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Main-1.css';
-import Comidita from '../comidita.jpg';
+import Comidita from '../images/comidita.jpg';
 import styled from "styled-components";
 
 

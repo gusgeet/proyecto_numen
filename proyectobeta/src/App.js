@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import "./App.css";
 import Headers from "./components/Navbar/Header";
 import Main1 from "./components/Main-1";
-import Main2 from "./components/Main-2";
+import Main2 from "./components/Main/Main-2";
 import { GlobalStyles } from "./global-styles";
 import { FooterContainer } from "./container/footer"
 
@@ -19,9 +19,7 @@ function App() {
       <GlobalStyles />
       <FooterContainer/>
       </>
-      <div>Hola Gus</div>
-    </div>
-    
+    </div>   
   );
 }
 

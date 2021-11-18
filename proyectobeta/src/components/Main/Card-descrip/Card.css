@@ -1,0 +1,20 @@
+.Card {
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+    color: #666;
+    font-size: .8rem;
+}
+
+.Card .icon {
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 375px) {
+    .Card {
+        text-align: start;
+    }
+}
