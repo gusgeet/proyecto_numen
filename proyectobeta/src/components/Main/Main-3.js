@@ -45,7 +45,7 @@ class Main3 extends Component{
                     <p>Cuéntale a tus amigos lo ricos que somos... ok no.</p>
                     <p>¡Pero hacenos propaganda y prometemos recompensarte!</p>
                 <div className="textMain3">
-                <img className="logoMain3" src={Logo}></img>
+                <img className="logoMain3" src={Logo} alt='logo'></img>
                    
                     </div>
                 
