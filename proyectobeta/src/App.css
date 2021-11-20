@@ -9,3 +9,22 @@
     position: sticky;
     top: 0;
 }
+
+.header-text {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+}
+
+.header-text p {
+    font-size: .8rem;
+}
+
+.header-text .icon-close:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
+

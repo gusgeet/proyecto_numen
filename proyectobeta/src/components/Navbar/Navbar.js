@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { MenuItems } from "./MenuItems";
-import { Button } from '../Button'
 import './Navbar.css'
-import { FaSearch } from "react-icons/fa";
-import { FaUserAlt } from "react-icons/fa";
-import { FaShoppingCart } from "react-icons/fa";
-
-
+import { FaSearch, FaUserAlt, FaShoppingCart } from "react-icons/fa";
 
 class Navbar extends Component{
     state = { clicked : false }
@@ -14,11 +9,6 @@ class Navbar extends Component{
     handleClick = () =>{
         this.setState({clicked: !this.state.clicked})
     }
-
-    mostrarForm = () =>{
-        this.setState({clicked: !this.state.clicked})
-    }
-
 
     render(){
         return(
@@ -39,9 +29,9 @@ class Navbar extends Component{
                         )
                     })}
                 </ul>
-                <input className="form_show"z></input>
+                <input className="form_show"></input>
 
-                <button class="rounded-button" type="button" onClick={this.mostrarForm}>
+                <button class="rounded-button" type="button">
                     <FaSearch className="buttonSearch" />
                 </button>
                 

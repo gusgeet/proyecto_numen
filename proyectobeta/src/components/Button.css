@@ -1,20 +1,19 @@
 :root {
-    --primary: #3acbf7;
+    --primary: #FF7878;
 }
 
 .btn{
     padding: 8px 20px;
-    border-radius: 4px;
+    border-radius: 20px;
     outline: none;
     border: none;
     cursor: pointer;
 }
 
 .btn:hover{
-    padding: 8px 20px;
     transition: all 0.3s ease-out;
-    background: #fff;
-    color: violet;
+    background: #FFACB7;
+    color: #212121;
     transition: 250ms;
     
 }
@@ -27,21 +26,21 @@
     background-color: transparent;
     color: #fff;
     padding:  8px 20px;
-    border-radius: 4px;
+    border-radius: 20px;
     border: 1px solid var(--primary);
     transition: all 0.3s ease-out;
 }
 
 .btn--medium{
     padding: 8px 20px;
-    border-radius: 4px;
+    border-radius: 20px;
     font-size: 18px;
     color: #fff;
 }
 
 .btn--large{
     padding: 12px 26px;
-    border-radius: 4px;
+    border-radius: 20px;
     font-size: 18px;
     color: #fff;
 }

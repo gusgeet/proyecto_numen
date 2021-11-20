@@ -7,6 +7,8 @@ import styled from "styled-components";
 
 const Section = styled.section `
     background: url(${Comidita}) center;
+    background-size: cover;
+    background-repeat: no-repeat; 
     height:80vh;
     display: flex;
     justify-contents: flex-start;
@@ -19,7 +21,13 @@ const Section = styled.section `
         width: auto;
     }
     
-`
+`;
+
+const Shadow = styled.div`
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+`;
 
 const Containner = styled.div` 
 
@@ -43,7 +51,7 @@ const Containner = styled.div`
     }
 
     i{
-        color: #000
+        color: orange;
     }
 
     button{
@@ -85,12 +93,13 @@ class Main1 extends Component{
     render(){
         return(
             <Section>
-                <Containner>
-                    <h6></h6>
-                    <h1>Nunca probaste un plato <i>así</i><p>En serio. <i>Nunca</i></p></h1>
-                   
-                    <button>¡Quiero!</button>
-                </Containner>
+                <Shadow>
+                    <Containner>
+                        <h1>Nunca probaste un plato <i>así</i><p>En serio. <i>Nunca</i></p></h1>
+                    
+                        <button>¡Quiero!</button>
+                    </Containner>
+                </Shadow>
             </Section>
 
 
