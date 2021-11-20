@@ -21,3 +21,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+Card {
+    justify-content: left;
+}

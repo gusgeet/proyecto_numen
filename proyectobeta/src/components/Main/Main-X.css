@@ -1,0 +1,14 @@
+.logo-image{
+    width: 75px;
+    height: 75px;
+}
+
+.logo-contain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo-contain:hover{
+    cursor: pointer;
+}

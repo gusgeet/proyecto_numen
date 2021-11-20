@@ -6,7 +6,7 @@ import './Main-3.css'
 
 const Section = styled.section`
     background: url(${Banner}) center;
-    height: 50vh;
+    height: 70vh;
     display: flexbox;
     justify-contents: center;
     align-items: center;
@@ -18,6 +18,10 @@ const Containner = styled.div`
     flex-flow: column wrap;
     align-items: center;
     color: #fff;
+
+    .logoMain3{
+    width: 225px;
+}
 
     p {
         font-size: 16px;
