@@ -15,6 +15,9 @@ const Section = styled.section`
 const Containner = styled.div` 
 
 
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     color: #fff;
 
     p {
