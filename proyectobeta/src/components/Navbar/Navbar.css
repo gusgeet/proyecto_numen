@@ -7,6 +7,10 @@
     font-size: 1.2rem; 
 }
 
+.navbar-dropdown-nosotros{
+    display: none;
+}
+
 .buttonSearch{
     font-size: 24px;
 }
@@ -72,13 +76,15 @@
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    cursor: pointer;
+
     
 }
 
 .nav-links:hover{
     background-color: #6d76f7;
     border-radius: 4px;
-    transition: all 0.2s ease-out;  
+    /* transition: all 0.2s ease-out;   */
 }
 
 .fa-bars{
@@ -97,6 +103,7 @@
     .form_show{
         display: none;
     }
+    
 }
 
 
@@ -105,6 +112,9 @@
         position: relative;
         margin: auto;
         
+    }
+    .i{
+        display: none;
     }
     
     .rounded-button{
