@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { MenuItems } from "./MenuItems";
 import {MenuGeneral} from './Dropdown-menu';
 import './Navbar.css'
-import { FaSearch, FaUserAlt, FaShoppingCart } from "react-icons/fa";
+import { FaSearch, FaUserAlt, FaShoppingCart, FaSortDown } from "react-icons/fa";
 
 class Navbar extends Component{
     state = { clicked : false }
@@ -24,8 +24,9 @@ class Navbar extends Component{
                         return(
                             <li key={item.id}>
                                 <a className={item.cName} href={item.url}>
-                                {item.title}
+                                {item.title} 
                                 </a>
+                                {item.id !== 4 ? <FaSortDown/> : null}
 
                                 <ul>
                                     {MenuGeneral.map(el => {

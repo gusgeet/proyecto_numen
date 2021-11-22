@@ -216,7 +216,7 @@
         position: absolute;
         width: 200px;
         top: 51px;
-        left: 0;
+        left: -40px;
         visibility: hidden;
         opacity: 0;
         transition: all .3s ease-in-out;
@@ -245,43 +245,8 @@
 }
 
 @media screen and (max-width: 960px) {
-    .nav-menu li {
-        position: relative;
-    }
-
     .nav-menu li ul {
-        position: absolute;
-        width: 100%;
-        top: 40px;
-        left: 0;
-        visibility: hidden;
-        opacity: 0;
-        transition: all .3s ease-in-out;
-        padding-inline-start: 0;
-        border: 1px solid #fff;
-    }
-
-    .nav-menu li:hover > ul {
-        visibility: visible;
-        opacity: 1;
-        transition: all .3s ease-in-out;
-        z-index: 2;
-    }
-
-    .nav-menu li ul li {
-        padding: 10px;
-        text-align: center;
-        background-color: #6668f4;
-        z-index: 1;
-    }
-
-    .nav-menu li ul li a {
-        color: #fff;
-    }
-
-    .nav-menu li ul li:hover {
-        cursor: pointer;
-        background-color: rgb(140, 134, 247)
+        display: none;
     }
 }
 
