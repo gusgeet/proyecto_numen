@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../components/footer"
+import Logo from "../images/footerlogo.png"
 
 
 export function FooterContainer() {
@@ -7,6 +8,9 @@ export function FooterContainer() {
         <Footer>
            <Footer.Wrapper>
                <Footer.Row>
+               <Footer.Column>
+                           <img className="footerLogo" src={Logo}></img>
+                   </Footer.Column>
                 <Footer.Column>
                     <Footer.Title>Nosotros</Footer.Title>
                     <Footer.Link href="#">Historia</Footer.Link>
@@ -38,7 +42,6 @@ export function FooterContainer() {
                     <Footer.Link href="#">Instagram</Footer.Link>
                     <Footer.Link href="#">Contactános</Footer.Link>
                 </Footer.Column>
-                
                </Footer.Row>
            </Footer.Wrapper>
         </Footer>

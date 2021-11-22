@@ -7,6 +7,10 @@
     font-size: 1.2rem; 
 }
 
+.nav-menu li svg{
+    color: #fff;
+}
+
 .navbar-dropdown-nosotros{
     display: none;
 }
