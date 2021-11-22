@@ -111,7 +111,6 @@
     .NavbarItems{
         position: relative;
         margin: auto;
-        
     }
     .i{
         display: none;
@@ -132,7 +131,10 @@
         left: -100%;
         opacity: 100%;
         transition: all 0.5s ease;
-        
+    }
+
+    .nav-menu li svg{
+        display: none;
     }
     
     .nav-menu.active{
@@ -210,6 +212,7 @@
 @media screen and (min-width: 961px) {
     .nav-menu li {
         position: relative;
+        text-align: center;
     }
 
     .nav-menu li ul {
