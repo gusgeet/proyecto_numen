@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { MenuItems } from "./MenuItems";
+import {MenuGeneral} from './Dropdown-menu';
 import './Navbar.css'
 import { FaSearch, FaUserAlt, FaShoppingCart } from "react-icons/fa";
 
@@ -19,12 +20,20 @@ class Navbar extends Component{
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) =>{
+                    {MenuItems.map((item) =>{
                         return(
-                            <li key={index}>
+                            <li key={item.id}>
                                 <a className={item.cName} href={item.url}>
                                 {item.title}
                                 </a>
+
+                                <ul>
+                                    {MenuGeneral.map(el => {
+                                        if (item.id === el.id) {
+                                            return el.title.map(name => <li><a href="">{name}</a></li>)
+                                        }
+                                    })}
+                                </ul>
                             </li>
                         )
                     })}
