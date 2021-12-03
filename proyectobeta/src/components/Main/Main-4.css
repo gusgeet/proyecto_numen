@@ -1,0 +1,29 @@
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(2. 1fr);
+    gap: 20px;
+}
+
+.contenedor{
+    display: flex;
+}
+
+.textos{
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+    
+    
+    
+    
+    
+}
+
+.title-1{
+    color:orange;
+}
+
+.imagen{
+    width: 50%;
+    margin: 20px;
+}

@@ -57,7 +57,7 @@ const logo = [
 const Logos = (props) => {
     return (
         <div className='logos'>
-            <img className="logo-image" src={props.image} src={props.image} />
+            <img className="logo-image" alt="logo del local" src={props.image} src={props.image} />
            
         </div>
     )

@@ -48,12 +48,10 @@ class Main3 extends Component{
                 <Containner>
                     <p>Cuéntale a tus amigos lo ricos que somos... ok no.</p>
                     <p>¡Pero hacenos propaganda y prometemos recompensarte!</p>
-                <div className="textMain3">
-                <img className="logoMain3" src={Logo} alt='logo'></img>
-                   
+                    <div className="textMain3">
+                        <img className="logoMain3" src={Logo} alt='logo'></img>
                     </div>
-                
-                <button className="learnBtnMain3">Aprende mas sobre nosotros</button>
+                    <button className="learnBtnMain3">Aprende mas sobre nosotros</button>
                 </Containner>
             </Section>
         )
