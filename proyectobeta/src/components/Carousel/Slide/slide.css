@@ -1,0 +1,17 @@
+.slide {
+    min-width: 250px; /* definimos que el ancho minimo sea del 100 para que solo se vea una img presente en pantalla */
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    z-index: 0;
+    max-height: 250px; /* para que los slides tengan todos el mismo tamaño en caso de que las images sean de tamaños diferentes */
+    position: relative;
+
+    border-radius: 50%;
+}
+
+.slide a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top; /* acomoda un espaciado por defecto */
+}

@@ -5,7 +5,7 @@ import Main1 from "./components/Main-1";
 import Main2 from "./components/Main/Main-2";
 import Main3 from './components/Main/Main-3';
 import Main4 from "./components/Main/Main-4";
-import Carousel from "./components/carousel";
+import Carousel from "./components/Carousel";
 import MainX from "./components/Main/Main-X";
 import { GlobalStyles } from "./global-styles";
 import { FooterContainer } from "./container/footer";

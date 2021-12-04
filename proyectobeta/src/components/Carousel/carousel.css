@@ -1,0 +1,46 @@
+.contenedor-principal {
+    width: 100%; /* toma el ancho del window */
+    position: relative;
+    overflow: hidden; /* evitamos que se rompa el window */
+}
+
+.contenedor-principal .contenedor-slideshow {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    /* SLIDE */
+}
+
+.contenedor-principal .controles {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none; /* permite definir a que elemento le damos prioridad sobre el pointer */
+}
+
+.contenedor-principal .controles button {
+    border: none;
+    border-radius: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    pointer-events: all; /* al quitar el pointer-event del contenedor .controles debemos agregar pointer event al button para que funcionen */
+    width: 50px;
+    height: 50px;
+    transition: all .3s ease-in-out;
+}
+
+.contenedor-principal .controles button:hover > span {
+    color: rgba(0, 0, 0, .5);
+    transition: all .3s ease-in-out;
+}
+
+.contenedor-principal .controles button span {
+    font-size: 2rem;
+    color: rgba(0, 0, 0, .8);
+}
