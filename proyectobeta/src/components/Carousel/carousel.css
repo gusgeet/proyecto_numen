@@ -2,9 +2,11 @@
     width: 100%; /* toma el ancho del window */
     position: relative;
     overflow: hidden; /* evitamos que se rompa el window */
+    height: 400px;
 }
 
 .contenedor-principal .contenedor-slideshow {
+    position: relative;
     display: flex;
     gap: 20px;
     padding: 0 20px;
@@ -26,7 +28,8 @@
 .contenedor-principal .controles button {
     border: none;
     border-radius: 2rem;
-    background-color: transparent;
+    background-color: white;
+    margin-top: 70px;
     cursor: pointer;
     outline: none;
     pointer-events: all; /* al quitar el pointer-event del contenedor .controles debemos agregar pointer event al button para que funcionen */
@@ -43,4 +46,20 @@
 .contenedor-principal .controles button span {
     font-size: 2rem;
     color: rgba(0, 0, 0, .8);
+}
+
+.instagram-cuenta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+}
+
+.cuenta {
+    font-size: 36px;
+    color: orange;
+}
+
+.instagram-cuenta i{
+    color: orange;
 }

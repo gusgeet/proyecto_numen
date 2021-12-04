@@ -123,7 +123,12 @@ const Carousel = () => {
     }, []);
 
     return (
+
         <div className='contenedor-principal'>
+            <div>
+                <h1 className="instagram-cuenta">Seguinos en Instagram, en  <h1 className="cuenta">@LaCarneria</h1></h1>
+            </div>
+            
             <div className="contenedor-slideshow" ref={slideshow}>
                 {images.map(el => <Slide name={el.name} id={el.id} />)}
             </div>

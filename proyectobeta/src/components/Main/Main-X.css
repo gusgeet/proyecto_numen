@@ -1,6 +1,6 @@
 .logo-image{
-    width: 75px;
-    height: 75px;
+    width: 125px;
+    height: 125px;
 }
 
 .logo-contain{
@@ -12,6 +12,7 @@
 .logo-contain:hover{
     cursor: pointer;
 }
+
 
 @media screen and (max-width: 450px) {
     .logo-contain{

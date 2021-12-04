@@ -25,6 +25,7 @@ const MainX = () => {
         margin-bottom: 15px;
         color: white;
         text-align: center;
+        font-size: 35px;
     }
 `
 const logo = [
