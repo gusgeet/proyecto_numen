@@ -31,6 +31,7 @@
     background-color: white;
     margin-top: 70px;
     cursor: pointer;
+    justify-content: center;
     outline: none;
     pointer-events: all; /* al quitar el pointer-event del contenedor .controles debemos agregar pointer event al button para que funcionen */
     width: 50px;
@@ -52,14 +53,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
+    font-size: 25px;
 }
 
 .cuenta {
-    font-size: 36px;
+    font-size: 25px;
     color: orange;
 }
 
 .instagram-cuenta i{
     color: orange;
 }
+
+@media screen and(min-width: 504px) {
+    .instagram-cuenta{
+        font-size: 15px;
+    }
+}
+
+@media screen and(min-width: 120px) {
+    p{
+        font-size: 6px;
+    }
+    
+}
+

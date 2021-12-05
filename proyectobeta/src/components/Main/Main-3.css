@@ -15,14 +15,19 @@
     transition: 250ms ease-in;
 }
 
-@media screen and (min-width: 425px) {
+
+
+@media screen and (max-width: 600px) {
     .learnBtnMain3 {
-        width: 250px;
+        width: 150px;
+        font-size: 10px;
     }
+
 }
 
 @media screen and (min-width: 575px) {
     .learnBtnMain3 {
-        width: 350px;
+        width: 270px;
+        font-size: 12px;
     }
 }

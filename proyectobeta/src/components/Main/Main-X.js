@@ -27,6 +27,14 @@ const MainX = () => {
         text-align: center;
         font-size: 35px;
     }
+
+    @media screen and (max-width: 562px) {
+        p{
+            font-size: 12px;
+        }
+    }
+
+
 `
 const logo = [
     {

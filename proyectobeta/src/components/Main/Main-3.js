@@ -6,10 +6,15 @@ import './Main-3.css'
 
 const Section = styled.section`
     background: url(${Banner}) center;
-    height: 70vh;
+    height: 50vh;
     display: flexbox;
     justify-contents: center;
     align-items: center;
+
+    @media screen and(max-width: 768px){
+        height: 40vh;
+    }
+    
 `
 
 const Containner = styled.div` 
@@ -20,7 +25,7 @@ const Containner = styled.div`
     color: #fff;
 
     .logoMain3{
-    width: 225px;
+        width: 225px;
 }
 
     p {
@@ -32,8 +37,13 @@ const Containner = styled.div`
     
     @media (max-width: 1000px){
         
+        .logoMain3{
+            width: 225px;
+    }
+    
+
         p {
-            font-size: 10px;
+            font-size: 12px;
             
         }
     

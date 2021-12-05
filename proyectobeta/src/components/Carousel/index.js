@@ -126,7 +126,7 @@ const Carousel = () => {
 
         <div className='contenedor-principal'>
             <div>
-                <h1 className="instagram-cuenta">Seguinos en Instagram, en  <h1 className="cuenta">@LaCarneria</h1></h1>
+                <p className="instagram-cuenta">Seguinos en Instagram, en  <p className="cuenta">@LaCarneria</p></p>
             </div>
             
             <div className="contenedor-slideshow" ref={slideshow}>

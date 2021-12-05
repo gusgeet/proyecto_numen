@@ -15,20 +15,58 @@ import {FaToiletPaper, FaChartPie, FaBalanceScale, FaAward, FaBell} from 'react-
 const Container = styled.div`
     margin: 0 auto;
 
+    @media screen and (min-width: 220px){
+        .card-contain {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    @media screen and (min-width: 400px){
+        .card-contain {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
     @media screen and (min-width: 576px) {
         width: 540px;
+        .card-contain {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            
+        }
     }
 
-    @media screen and (min-width: 768px) {
-        width: 720px;
+    @media screen and (min-width: 630px) {
+        width: 85%;
+
+        .card-contain {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            
+        }
     }
+
+    @media screen and (min-width: 900px) {
+        width: 90%;
+
+        .card-contain {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            
+        }
+    }
+
+
 
     @media screen and (min-width: 992px) {
-        width: 960px;
-    }
-
-    @media screen and (min-width: 1200px) {
-        width: 1140px;
+        width: 93%;
+        .card-contain {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            
+        }
     }
 `
 
