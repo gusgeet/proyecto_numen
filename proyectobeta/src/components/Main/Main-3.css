@@ -1,5 +1,5 @@
 .learnBtnMain3{
-    font-size: clamp(0.8rem, 4vw, 1.2rem);
+    font-size: clamp(1.8rem, 6vw, 1.6rem);
     padding: 0.8rem 2rem;
     color: #000;
     background: #ffb347;
@@ -15,19 +15,45 @@
     transition: 250ms ease-in;
 }
 
+.logoMain3{
+    width: 225px;
+}
+
+.texto-Main3 {
+    font-size: 40px;
+    text-align: center;
+}
 
 
-@media screen and (max-width: 600px) {
+
+@media (max-width: 1000px){
+    .logoMain3{
+        width: 225px;
+}
+}
+
+
+
+@media screen and (max-width: 574px) {
     .learnBtnMain3 {
         width: 150px;
         font-size: 10px;
+    }
+
+    .texto-Main3 {
+        font-size: 12px;
     }
 
 }
 
 @media screen and (min-width: 575px) {
     .learnBtnMain3 {
-        width: 270px;
-        font-size: 12px;
+        width: 400px;
+        height: 50px;
+        font-size: 19px;
+    }
+
+    .texto-Main3 {
+        font-size: 25px;
     }
 }

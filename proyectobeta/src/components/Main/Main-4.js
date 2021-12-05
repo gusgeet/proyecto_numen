@@ -16,7 +16,7 @@ class Main4 extends Component {
                     <div className="textos">
                         <p className="title-1">Sorprende a alguien de tu hogar</p>
                         <p className="title-2">con este plato que casi habla</p>
-                        <br/>
+                    
                         <p className="infotext">Hablando de eso: ¿sabias que en los cortes integros, las bacterias se encuentran solamente en la superficie?
                             Por eso, la próxima vez que veas un plato asi, no te sorprendas: no es habitual verlo, pero es mas comun de lo que pensas.</p>
                         

@@ -24,30 +24,7 @@ const Containner = styled.div`
     align-items: center;
     color: #fff;
 
-    .logoMain3{
-        width: 225px;
-}
-
-    p {
-        font-size: 16px;
-        text-align: center;
-    }
-
-
     
-    @media (max-width: 1000px){
-        
-        .logoMain3{
-            width: 225px;
-    }
-    
-
-        p {
-            font-size: 12px;
-            
-        }
-    
-    }
 
 `
 
@@ -56,8 +33,7 @@ class Main3 extends Component{
         return(
             <Section>
                 <Containner>
-                    <p>Cuéntale a tus amigos lo ricos que somos... ok no.</p>
-                    <p>¡Pero hacenos propaganda y prometemos recompensarte!</p>
+                    <p className="texto-Main3">Hacénos propaganda y prometemos recompensarte.</p>
                     <div className="textMain3">
                         <img className="logoMain3" src={Logo} alt='logo'></img>
                     </div>

@@ -126,11 +126,11 @@ const Carousel = () => {
 
         <div className='contenedor-principal'>
             <div>
-                <p className="instagram-cuenta">Seguinos en Instagram, en  <p className="cuenta">@LaCarneria</p></p>
+                <p className="instagram-cuenta">Seguinos en Instagram, en <p className="cuenta">@LaCarneria</p></p>
             </div>
             
             <div className="contenedor-slideshow" ref={slideshow}>
-                {images.map(el => <Slide name={el.name} id={el.id} />)}
+                {images.map(el => <Slide className="slides" name={el.name} id={el.id} />)}
             </div>
             <div className='controles'>
                 <button onClick={prev}><FaChevronLeft/></button>

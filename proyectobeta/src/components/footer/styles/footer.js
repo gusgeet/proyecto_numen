@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    padding: 30px 20px;
+    padding: 30px 10px;
     background: radial-gradient(circle, rgba(92, 39, 251, 1) 0%, rgba(12, 71, 
     247, 1) 100%);
 `
@@ -29,6 +29,7 @@ export const Column = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-bottom: 20px;
     
 `
 
@@ -48,9 +49,10 @@ export const Row = styled.div`
 
 export const Link = styled.div`
     color: #fff;
-    margin-bottom: 20px;
     font-size: 16px;
     text-decoration: none;
+    margin-top: 30px;
+
 
     &:hover{
         color: #ff9c00;
@@ -60,8 +62,8 @@ export const Link = styled.div`
 `
 
 export const Title = styled.div`
-    font-size: 16px;
-    color: #ffF;
-    margin-bottom: 40px;
+    font-size: 19px;
+    color: orange;
     font-weight: bold;
+    
 `

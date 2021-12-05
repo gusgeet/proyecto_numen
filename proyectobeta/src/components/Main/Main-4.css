@@ -9,11 +9,11 @@
 
 .title-1{
     color:orange;
-    font-size: 40px;
+    font-size: 32px;
 }
 
 .title-2{
-    font-size: 40px;
+    font-size: 32px;
 }
 
 p{
@@ -26,6 +26,9 @@ p{
     width: 90%;
 }
 
+.textos{
+    margin-left: 8%;
+}
 
 
 @media screen and (min-width: 991px) and (max-width: 1450px){
@@ -51,7 +54,7 @@ p{
 
 @media screen and (max-width: 990px){
     .textos{
-        margin-left: 12%;
+        margin-left: 6%;
     }
 
     .title-1{
@@ -68,7 +71,7 @@ p{
     }
 
     .infotext{
-        font-size: 7px;
+        font-size: 11px;
     }
 
     .imagen{
@@ -100,8 +103,10 @@ p{
     }
 
     .contenedor .btn--medium{
-        font-size: 6px;
-        width: 100px;
+        font-size: 9px;
+        width: 90px;
+        height: 25px;
+        
     }
 
 }
