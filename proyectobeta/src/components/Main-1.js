@@ -77,8 +77,12 @@ const Containner = styled.div`
     @media (max-width: 1000px){
         h1 {
             font-size: 40px;
-            margin-left: 80px;
+            margin-left: 50px;
             padding-top: 90px;
+        }
+
+        button {
+            margin-left: 50px;
         }
 
         p {

@@ -6,6 +6,7 @@
     align-items: flex-start;
     color: #666;
     font-size: .8rem;
+    margin: 0 auto;
 }
 
 .Card .icon {

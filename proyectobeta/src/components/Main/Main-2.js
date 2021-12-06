@@ -103,27 +103,27 @@ const Main2 = () => {
         {
             icon: <FaBalanceScale/>,
             title: 'Lorem ipsum dolor sit amet consectetur',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus, iste soluta laborum amet quo dicta sunt velit, esse blanditiis vel ex perspiciatis! Distinctio, aspernatur.'
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus.'
         },
         {
             icon: <FaBell/>,
             title: 'Lorem ipsum dolor sit amet consectetur',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus, iste soluta laborum amet quo dicta sunt velit, esse blanditiis vel ex perspiciatis! Distinctio, aspernatur.'
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus.'
         },
         {
             icon: <FaChartPie/>,
             title: 'Lorem ipsum dolor sit amet consectetur',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus, iste soluta laborum amet quo dicta sunt velit, esse blanditiis vel ex perspiciatis! Distinctio, aspernatur.'
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus.'
         },
         {
             icon: <FaToiletPaper/>,
             title: 'Lorem ipsum dolor sit amet consectetur',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus, iste soluta laborum amet quo dicta sunt velit, esse blanditiis vel ex perspiciatis! Distinctio, aspernatur.'
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus.'
         },
         {
             icon: <FaAward/>,
             title: 'Lorem ipsum dolor sit amet consectetur',
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus, iste soluta laborum amet quo dicta sunt velit, esse blanditiis vel ex perspiciatis! Distinctio, aspernatur.'
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem praesentium minima error adipisci, ducimus necessitatibus.'
         }
     ]
 

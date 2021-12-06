@@ -1,4 +1,4 @@
-import React, { useRef, useEffect} from 'react';
+import React, { useRef } from 'react';
 
 // icons
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -64,7 +64,7 @@ const Carousel = () => {
             
             const firstEl = slideshow.current.children[0]; // obtenemos primer elemento hijo
             
-            slideshow.current.style.transition = `500ms ease-out all`; // establecemos transición para el slideshow
+            slideshow.current.style.transition = `.4s ease-in-out all`; // establecemos transición para el slideshow
 
             const sizeSlide = slideshow.current.children[0].offsetWidth; // obtenemos el ancho del slide actual
 
@@ -98,45 +98,26 @@ const Carousel = () => {
             slideshow.current.style.transform = `translateX(-${sizeSlide}px)`;
 
             setTimeout(() => {
-                slideshow.current.style.transition = '500ms ease-out all';
+                slideshow.current.style.transition = '.4s ease-in-out all';
                 slideshow.current.style.transform = `translateX(0)`; // movemos el slideshow
             }, 30)
             
         }
     }
 
-    useEffect(() => { // nos permite pasarle una funcion que se va a ejecutar cada vez que tengamos un renderizado en la app
-        slideAuto.current = setInterval(() => { // ejecutamos cada .5s la funcion next()
-            next();
-        }, 5000);
-
-        slideshow.current.addEventListener('mouseenter', () => { // eliminamos los intervalos cada vez que el mouse este en el carousel
-            clearInterval(slideAuto.current);
-        });
-
-        slideshow.current.addEventListener('mouseleave', () => { // eliminamos los intervalos
-            slideAuto.current = setInterval(() => { // volvemos a ejecutar cada .5s la funcion next() al quitar el mouse del carousel
-                next();
-            }, 5000);
-        });
-
-    }, []);
-
     return (
-
-        <div className='contenedor-principal'>
-            <div>
-                <p className="instagram-cuenta">Seguinos en Instagram, en <p className="cuenta">@LaCarneria</p></p>
+        <>    
+            <p className="instagram-cuenta">Seguinos en Instagram, en <span className="cuenta">@LaCarneria</span></p>
+            <div className='contenedor-principal'>
+                <div className="contenedor-slideshow" ref={slideshow}>
+                    {images.map(el => <Slide className="slides" name={el.name} id={el.id} />)}
+                </div>
+                <div className='controles'>
+                    <button onClick={prev}><FaChevronLeft/></button>
+                    <button onClick={next}><FaChevronRight/></button>
+                </div>
             </div>
-            
-            <div className="contenedor-slideshow" ref={slideshow}>
-                {images.map(el => <Slide className="slides" name={el.name} id={el.id} />)}
-            </div>
-            <div className='controles'>
-                <button onClick={prev}><FaChevronLeft/></button>
-                <button onClick={next}><FaChevronRight/></button>
-            </div>
-        </div>
+        </>
     )
 }
 

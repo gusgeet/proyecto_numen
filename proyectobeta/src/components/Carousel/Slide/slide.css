@@ -1,9 +1,9 @@
 .slide {
-    min-width: 200px; /* definimos que el ancho minimo sea del 100 para que solo se vea una img presente en pantalla */
+    min-width: 100px; /* definimos que el ancho minimo sea del 100 para que solo se vea una img presente en pantalla */
     overflow: hidden;
     transition: all .3s ease-in-out;
     z-index: 0;
-    max-height: 200px; /* para que los slides tengan todos el mismo tamaño en caso de que las images sean de tamaños diferentes */
+    max-height: 100px; /* para que los slides tengan todos el mismo tamaño en caso de que las images sean de tamaños diferentes */
     position: relative;
     border-radius: 50%;
 }
