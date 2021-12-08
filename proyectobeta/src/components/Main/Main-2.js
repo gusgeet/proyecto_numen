@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import './Main-2.css';
+
+import Button from "../Button";
 
 import Product from './Product-card/Product';
 import Card from './Card-descrip/Card';
@@ -9,11 +11,14 @@ import food01 from '../../images/products/food01.jpg';
 import food02 from '../../images/products/food02.jpg';
 import food03 from '../../images/products/food03.jpg';
 import food04 from '../../images/products/food04.jpg';
+import cocineros from '../../images/cocineros.jpg';
 
-import {FaToiletPaper, FaChartPie, FaBalanceScale, FaAward, FaBell} from 'react-icons/fa';
+import {FaToiletPaper, FaChartPie, FaBalanceScale, FaAward, FaBell, FaCheckCircle} from 'react-icons/fa';
 
 const Container = styled.div`
     margin: 0 auto;
+
+    
 
     @media screen and (min-width: 220px){
         .card-contain {
@@ -68,6 +73,14 @@ const Container = styled.div`
             
         }
     }
+`
+
+const Container2 = styled.div`
+    
+.container-resume{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+}
 `
 
 const Main2 = () => {
@@ -128,24 +141,48 @@ const Main2 = () => {
     ]
 
     return(
-        <Container>
-            <section>
-                <p className="title-products">Latest <snap>Offers</snap></p>
-                <div className="product-contain">
-                    {data.map(product => {
-                        return <Product image={product.image} name={product.name} price={product.price} discount={product.discount}/>
+        <>
+            <Container>
+                <section>
+                    <p className="title-products">Latest <snap>Offers</snap></p>
+                    <div className="product-contain">
+                        {data.map(product => {
+                            return <Product image={product.image} name={product.name} price={product.price} discount={product.discount}/>
+                        })}
+                    </div>
+                </section>
+                <section>
+                <p className="title-products">Why Choose <snap>the Premium Bakery Quality</snap></p>
+                <div className="card-contain">
+                    {cardData.map(el => {
+                    return <Card icon={el.icon} title={el.title} text={el.text}/> 
                     })}
                 </div>
-            </section>
-            <section>
-            <p className="title-products">Why Choose <snap>the Premium Bakery Quality</snap></p>
-            <div className="card-contain">
-                {cardData.map(el => {
-                   return <Card icon={el.icon} title={el.title} text={el.text}/> 
-                })}
-            </div>
-            </section>
-        </Container>
+                </section>
+            </Container>
+            <Container2 className="container-resume">
+            <div >
+                <p className="texto-cocina">¿Querés conocer a <i className="cocineros-text">nuestros cocineros?</i></p>
+                    <p className="texto-descripcion">Nuestra misión en la cocina, es demostrarte que no importa lo desagradable del plato: vas a amarlo igualmente. Razones:</p>
+                    <ul className="lista-caracteristicas">
+                        <li><FaCheckCircle className="icon-check"/> La cocina no es solo muestra: tambien es aroma. </li>
+                        <br/>
+                        <li><FaCheckCircle className="icon-check"/> Nuestros precios, para nada atractivos, van a hacer que te tengas que comer el plato </li>
+                        <br/>
+                        <li><FaCheckCircle className="icon-check"/> Los mozos, hacen su mejor trabajo y son traidos de los mejores rincones del planeta. No van a decepcionarte </li>
+                        <br/>
+                        <li><FaCheckCircle className="icon-check"/> La musica de ambiente te hara olvidar lo que pagaste cada plato, aunque lo recuerde en este li </li>
+                        <br/>
+                        <li><FaCheckCircle className="icon-check"/> Si necesitas mas razones, tendre que insistir con los puntos anteriores </li>
+                    </ul>
+                    <button>Descubre más</button>
+                    </div>
+                <div>        
+                    <img className="imagen-cocina" src={cocineros}/>
+                </div>
+            </Container2>
+            </>
+        
     )
     
 }
