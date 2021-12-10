@@ -83,7 +83,7 @@ const Container2 = styled.div`
 }
 `
 
-const Main2 = () => {
+export const Main2 = () => {
 
     const data = [
         {
