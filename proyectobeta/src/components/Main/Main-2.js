@@ -133,7 +133,7 @@ const Main2 = () => {
                 <p className="title-products">Latest <snap>Offers</snap></p>
                 <div className="product-contain">
                     {data.map(product => {
-                        return <Product image={product.image} name={product.name} price={product.price} discount={product.discount}/>
+                        return <Product image={product.image} name={product.name} price={product.price} discount={product.discount} key={product.name}/>
                     })}
                 </div>
             </section>

@@ -9,7 +9,7 @@ export function FooterContainer() {
            <Footer.Wrapper>
                <Footer.Row>
                <Footer.Column>
-                           <img className="footerLogo" src={Logo}></img>
+                           <img className="footerLogo" src={Logo} alt='footer-logo'></img>
                    </Footer.Column>
                 <Footer.Column>
                     <Footer.Title>Nosotros</Footer.Title>
