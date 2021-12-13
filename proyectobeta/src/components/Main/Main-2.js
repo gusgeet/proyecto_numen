@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import styled from "styled-components";
 import './Main-2.css';
 import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
@@ -7,6 +7,7 @@ import { useReducer } from 'react';
 
 import Product from './Product-card/Product';
 import Card from './Card-descrip/Card';
+import Modal from "../../actions/shoppingConfirm";
 
 import food01 from '../../images/products/food01.jpg';
 import food02 from '../../images/products/food02.jpg';
@@ -88,15 +89,21 @@ const Container2 = styled.div`
 
 export const Main2 = () => {
 
+    const [estadoModal1, cambiarEstadoModal1] = useState(false);
+
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
     const { product, cart } = state;
 
-    const addToCart = (id) => {
-        dispatch({type: TYPES.ADD_TO_CART, payload: id})
-        console.log(cart)
+    const { cartProv } = state;
+
+    function aConfirmar (id) {
+        dispatch({type: TYPES.A_CONFIRMAR, payload: id})
+        cambiarEstadoModal1(!estadoModal1);
+        
     }
 
+   
     const products = [
         {
             id: 1,
@@ -163,8 +170,22 @@ export const Main2 = () => {
                     <p className="title-products">Latest <snap>Offers</snap></p>
                     <div className="product-contain">
                         {products.map((product) => {
-                            return <Product image={product.image} data={product} addToCart={addToCart}/>
+                            return <Product image={product.image} data={product} aConfirmar={() => aConfirmar(product.id)} />
                         })}
+                        <Modal 
+                        estado={estadoModal1}
+                        cambiarEstado={cambiarEstadoModal1}
+                        titulo="Confirmar compra"
+                        texto="¿Desea confirmar su compra?"
+                        price={state.cartProv.price}
+                        
+                        // idCompra={ultimacompra}
+                    >
+                        {/* <Contenido>
+                            <Boton onclick={() => cambiarEstadoModal1(!estadoModal1), addToCart={addToCart}}></Boton>
+                        </Contenido> */}
+
+                    </Modal>
                     </div>
                 </section>
                 <section>

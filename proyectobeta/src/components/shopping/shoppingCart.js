@@ -16,7 +16,6 @@ export const ShoppingCart = () => {
         } else {
             dispatch({type: TYPES.REMOVE_PRODUCT, payload: id})
         }
-
     }
 
     const clearCart = () => {

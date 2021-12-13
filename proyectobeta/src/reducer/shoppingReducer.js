@@ -38,11 +38,24 @@ export const shoppingInitialState = {
             discount: 1100.99
         }
     ],
-    cart: []
+    cart: [],
+    cartProv: []
 };
 
 export function shoppingReducer(state, action){
     switch (action.type) {
+        case TYPES.A_CONFIRMAR:{
+            let newItem = state.products.find(product => product.id === action.payload)
+
+            return {
+                cartProv:  [...state.cartProv, {...newItem, quantity: 1}]
+                }
+        }
+
+        case TYPES.CONFIRMADO:{
+            return shoppingInitialState.cartProv
+        }
+
         case TYPES.ADD_TO_CART:{
             let newItem = state.products.find(product => product.id === action.payload)
             let itemInCart = state.cart.find((item) => item.id === newItem.id)

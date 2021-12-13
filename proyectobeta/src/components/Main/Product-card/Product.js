@@ -4,7 +4,8 @@ import './Product.css';
 
 
 
-const Product = ({data, addToCart}) => {
+const Product = ({data, aConfirmar}) => {
+
     const {id, image, name, price, discount} = data;
 
     return (
@@ -14,7 +15,7 @@ const Product = ({data, addToCart}) => {
             <div className="price">
                 <p>${price} <snap>${discount}</snap> </p>
             </div>
-            <Button onClick={() => addToCart(id)} >Quick Shop</Button>
+            <Button onClick={() => aConfirmar()} >Comprar</Button>
         </div>
     )
 }
