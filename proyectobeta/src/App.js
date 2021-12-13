@@ -10,7 +10,7 @@ import MainX from "./components/Main/Main-X";
 import { GlobalStyles } from "./global-styles";
 import { FooterContainer } from "./container/footer";
 import { FaTimes } from "react-icons/fa";
-import ShoppingCart from "./components/shopping/shoppingCart";
+import ShoppingCart from "./components/shopping/ShoppingCart";
 
 function App() {
 
@@ -27,8 +27,8 @@ function App() {
         null
       }
       <Navbar />
-      <ShoppingCart/>
       <Main1 />
+      <ShoppingCart/>
       <Main2 />
       <Main3/>
       <Main4/>

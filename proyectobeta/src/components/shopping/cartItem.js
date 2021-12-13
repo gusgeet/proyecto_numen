@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../Button";
 
 const CartItem = ({data, deleteFromCart}) => {
     const {id, name, price, quantity} = data;
@@ -8,7 +8,7 @@ const CartItem = ({data, deleteFromCart}) => {
             <h4>{name} </h4>        
             <h5>${price} x {quantity} = ${price * quantity} </h5>
             <Button onClick={() => deleteFromCart(id)}>Eliminar uno</Button>
-            <Button onClick={() => deleteFromCart(id)}>Eliminar todos</Button>
+            <Button onClick={() => deleteFromCart(id, true)}>Eliminar todos</Button>
         </div>
     )
 }

@@ -2,15 +2,19 @@ import React from 'react';
 import Button from '../../Button';
 import './Product.css';
 
-const Product = (props) => {
+
+
+const Product = ({data, addToCart}) => {
+    const {id, image, name, price, discount} = data;
+
     return (
         <div className='product'>
-            <img src={props.image} alt={props.image} />
-            <p className='product-name'>{props.name}</p>
+            <img src={image} alt={image} />
+            <p className='product-name'>{name}</p>
             <div className="price">
-                <p>${props.price} <snap>${props.discount}</snap> </p>
+                <p>${price} <snap>${discount}</snap> </p>
             </div>
-            <Button>Quick Shop</Button>
+            <Button onClick={() => addToCart(id)} >Quick Shop</Button>
         </div>
     )
 }
