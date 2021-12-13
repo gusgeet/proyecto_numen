@@ -10,7 +10,12 @@ export const ShoppingCart = () => {
     const { products, cart } = state;
 
     const deleteFromCart = (id, all = false) => {
-        console.log(id, all)
+        // console.log(id, all)
+        if(all){
+            dispatch({type: TYPES.REMOVE_ALL, payload: id})
+        } else {
+            dispatch({type: TYPES.REMOVE_PRODUCT, payload: id})
+        }
 
     }
 

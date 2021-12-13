@@ -90,14 +90,11 @@ export const Main2 = () => {
 
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-    const { cart } = state;
-
-    
+    const { product, cart } = state;
 
     const addToCart = (id) => {
-        console.log(id)
         dispatch({type: TYPES.ADD_TO_CART, payload: id})
-        console.log(state.cart)
+        console.log(cart)
     }
 
     const products = [
