@@ -97,10 +97,14 @@ export const Main2 = () => {
 
     const { cartProv } = state;
 
-    function aConfirmar (id) {
-        dispatch({type: TYPES.A_CONFIRMAR, payload: id})
-        cambiarEstadoModal1(!estadoModal1);
+    // function aConfirmar (id) {
+    //     dispatch({type: TYPES.A_CONFIRMAR, payload: id})
+    //     cambiarEstadoModal1(!estadoModal1);
         
+    // }
+    const addToCart = (id) => {
+        dispatch({type: TYPES.ADD_TO_CART, payload: id})
+        console.log(cart)
     }
 
    
@@ -170,7 +174,7 @@ export const Main2 = () => {
                     <p className="title-products">Latest <snap>Offers</snap></p>
                     <div className="product-contain">
                         {products.map((product) => {
-                            return <Product image={product.image} data={product} aConfirmar={() => aConfirmar(product.id)} />
+                            return <Product image={product.image} data={product} addToCart={() => addToCart(product.id)} />
                         })}
                         <Modal 
                         estado={estadoModal1}

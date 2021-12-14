@@ -21,10 +21,7 @@ const Modal = ({
 
     
     const addToCart = () => {
-        // dispatch({type: TYPES.ADD_TO_CART, payload: id})
-        // dispatch({type: TYPES.CONFIRMADO, payload: id})
-        console.log(cartProv)
-
+        dispatch({type: TYPES.ADD_TO_CART, payload: id})
     }
 
     const {id, name, price} = state
@@ -40,9 +37,9 @@ const Modal = ({
                     {children}
                     <Encabezado>
                         <h3>Confirmar</h3>
-                        <Button onClick={() => addToCart()}>HAGA CLICK</Button>
-                            
+                        <h4>{state.cartProv.name}</h4>
                     </Encabezado>
+                    <Button onClick={() => addToCart()}>HAGA CLICK</Button>
                 </Contenedor>
             </Overlay>
             }
@@ -56,7 +53,7 @@ export default Modal;
 const Overlay = styled.div `
     width: 100vw;
     height: 100vg;
-    position: inherit;
+    position: absolute;
     
     left: 0;
     background: rgba(0,0,0,.5);
@@ -73,7 +70,8 @@ const Contenedor = styled.div`
     position: relative;
     border-radius: 5px;
     box-shadow: rgba(100,100,111, 0.2) 0px 7px 29px 0px;
-    padding: 20px; 
+    padding: 20px;
+     
 `
 
 const Encabezado = styled.div`
@@ -112,3 +110,4 @@ const BotonCerrar = styled.button`
         background: #f2f2f2;
     }
 `
+
