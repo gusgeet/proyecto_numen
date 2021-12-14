@@ -13,11 +13,6 @@ const Modal = ({
     estado, 
     cambiarEstado, 
     }) => {
-
-    
-
-
-
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
     const { product, cartProv } = state;
