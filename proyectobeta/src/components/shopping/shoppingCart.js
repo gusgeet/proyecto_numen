@@ -1,31 +1,34 @@
-import React from 'react';
-import { TYPES } from '../../actions/shoppingActions';
 import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
+import { TYPES } from '../../actions/shoppingActions';
 import { useReducer } from 'react';
-import CartItem from '../cartItem';
-import Button from '../Button';
+import CartItem from './cartItem';
 
-const ShoppingCart = () => {
+
+export const ShoppingCart = () => {
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-    const addToCart = (id) => {
-        dispatch({type: TYPES.ADD_TO_CART, payload: id})
+    const { products, cart } = state;
 
+    const deleteFromCart = (id, all = false) => {
+        // console.log(id, all)
+        if(all){
+            dispatch({type: TYPES.REMOVE_ALL, payload: id})
+        } else {
+            dispatch({type: TYPES.REMOVE_PRODUCT, payload: id})
+        }
     }
 
-    const deleteFromCart = () => {}
+    const clearCart = () => {
+        dispatch({type: TYPES.CLEAR_CART})
 
-    const clearCart = () => {}
-
-    const {products, cart} = state;
-
+    }
 
     return(
         <>
             <h3>Carrito</h3>
             <div className='box'>
                 {cart.map((item, index) => <CartItem key={index} data={item} deleteFromCart={deleteFromCart}/>)}
-                <Button onClick={() => clearCart}>Eliminar carro</Button>
+                <button onClick={() => clearCart}>Eliminar carro</button>
             </div>
         </>
     )

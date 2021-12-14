@@ -1,11 +1,13 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import styled from "styled-components";
 import './Main-2.css';
-
-import Button from "../Button";
+import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
+import { TYPES } from '../../actions/shoppingActions';
+import { useReducer } from 'react';
 
 import Product from './Product-card/Product';
 import Card from './Card-descrip/Card';
+import Modal from "../../actions/shoppingConfirm";
 
 import food01 from '../../images/products/food01.jpg';
 import food02 from '../../images/products/food02.jpg';
@@ -83,32 +85,53 @@ const Container2 = styled.div`
 }
 `
 
+
+
 export const Main2 = () => {
 
-    const data = [
+    const [estadoModal1, cambiarEstadoModal1] = useState(false);
+
+    const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
+
+    const { product, cart } = state;
+
+    const { cartProv } = state;
+
+    function aConfirmar (id) {
+        dispatch({type: TYPES.A_CONFIRMAR, payload: id})
+        cambiarEstadoModal1(!estadoModal1);
+        
+    }
+
+   
+    const products = [
         {
+            id: 1,
             image: food01,
-            name: 'burguer',
+            name: 'salad',
             price: 550.55,
             discount: 600.99
         },
         {
+            id: 2,
             image: food02,
-            name: 'soup',
+            name: 'hamburguesa',
             price: 800.99,
             discount: 890.99
         },
         {
+            id: 3,
             image: food03,
-            name: 'pizza',
-            price: 1000.99,
-            discount: 1100.99
-        },
-        {
-            image: food04,
-            name: 'pasta italiana',
+            name: 'fruit salad',
             price: 330.99,
             discount: 450.99
+        },
+        {
+            id: 4,
+            image: food04,
+            name: 'gourmet style',
+            price: 1000.99,
+            discount: 1100.99
         }
     ]
 
@@ -146,9 +169,23 @@ export const Main2 = () => {
                 <section>
                     <p className="title-products">Latest <snap>Offers</snap></p>
                     <div className="product-contain">
-                        {data.map(product => {
-                            return <Product image={product.image} name={product.name} price={product.price} discount={product.discount}/>
+                        {products.map((product) => {
+                            return <Product image={product.image} data={product} aConfirmar={() => aConfirmar(product.id)} />
                         })}
+                        <Modal 
+                        estado={estadoModal1}
+                        cambiarEstado={cambiarEstadoModal1}
+                        titulo="Confirmar compra"
+                        texto="¿Desea confirmar su compra?"
+                        price={state.cartProv.price}
+                        
+                        // idCompra={ultimacompra}
+                    >
+                        {/* <Contenido>
+                            <Boton onclick={() => cambiarEstadoModal1(!estadoModal1), addToCart={addToCart}}></Boton>
+                        </Contenido> */}
+
+                    </Modal>
                     </div>
                 </section>
                 <section>
