@@ -1,3 +1,4 @@
+import React from 'react';
 import { TYPES } from '../../actions/shoppingActions';
 import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
 import { useReducer } from 'react';

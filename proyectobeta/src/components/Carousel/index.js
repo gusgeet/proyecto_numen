@@ -57,7 +57,6 @@ const images = [
 const Carousel = () => {
 
     const slideshow = useRef(null); // Hook useRef siempre va dentro del componente, nos permite acceder a las referencias que determinemos y establecerlas
-    const slideAuto = useRef(null);
 
     const next = () => {
         if (slideshow.current.children.length > 0) { // si el slideshow accediendo al current que nos devuelve la etiqueta y su contenido, tiene etiquetas hijas (es mayor a cero)
