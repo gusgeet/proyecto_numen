@@ -14,6 +14,7 @@ import cocineros from '../../images/cocineros.jpg';
 
 import {FaToiletPaper, FaChartPie, FaBalanceScale, FaAward, FaBell, FaCheckCircle} from 'react-icons/fa';
 import ShoppingCart from "../shopping/shoppingCart";
+import Modal from "../../actions/shoppingConfirm";
 
 const Container = styled.div`
     margin: 0 auto;
@@ -87,7 +88,7 @@ const Container2 = styled.div`
 
 export const Main2 = () => {
 
-    //const [estadoModal1, cambiarEstadoModal1] = useState(false);
+    const [estadoModal1, cambiarEstadoModal1] = useState(false);
 
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
@@ -119,10 +120,8 @@ export const Main2 = () => {
         });
       }, []);
     
-     const addToCart = (id) => {
-        //console.log(id)
-         dispatch({type: TYPES.ADD_TO_CART, payload: id})
-         
+     const addToCart = (id, estadoModal1) => {
+        dispatch({type: TYPES.ADD_TO_CART, payload: id})
         
      }
 
@@ -161,19 +160,27 @@ export const Main2 = () => {
                     <p className="title-products">Latest <snap>Offers</snap></p>
                     <div className="product-contain">
                        {products.map((product) => {
-                            return <Product image={product.image} key={product.id} data={product} addToCart={() =>addToCart(product.id)} />
+                            return <Product image={product.image} key={product.id} data={product} addToCart={() =>cambiarEstadoModal1(product, !estadoModal1)} />
                         })}
                     </div>
                     <>
-           
-        </>
+                        <Modal
+                            estado={estadoModal1}
+                            cambiarEstado={cambiarEstadoModal1}
+                            products
+                            >
+                        <>
+                            
+                        </>
+                        </Modal>
+                    </>
                 </section>
                 
                 <section>
                 <h3>Carrito</h3>
                     <div className='box'>
                         {cart.map((item, index) => <CartItem key={index} data={item} deleteFromCart={deleteFromCart}/>)}
-                        <button onClick={() => clearCart}>Eliminar carro</button>
+                        {/* <button onClick={}>Eliminar carro</button> */}
                     </div>
                 <p className="title-products">Why Choose <snap>the Premium Bakery Quality</snap></p>
                 <div className="card-contain">
