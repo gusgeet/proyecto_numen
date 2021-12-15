@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from '../../Button';
+import Button from '../../src/components/Button';
 import './Product.css';
 
 
 
-const Product = ({data, addToCart}) => {
+const Product = ({data, addToCart, cambiarEstadoModal1}) => {
 
     const {id, image, name, price, discount} = data;
 
@@ -15,7 +15,7 @@ const Product = ({data, addToCart}) => {
             <div className="price">
                 <p>${price} <snap>${discount}</snap> </p>
             </div>
-            <Button onClick={() => addToCart(id)} >Comprar</Button>
+            <Button onClick={() => addToCart(id), cambiarEstadoModal1()} >Comprar</Button>
         </div>
     )
 }

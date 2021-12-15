@@ -2,28 +2,28 @@
     "Productos": [
       {
               "id": 1,
-              "image": "food01",
+              "image": "/images/products/food01.jpg",
               "name": "burguer",
               "price": 550.55,
               "discount": 600.99
           },
           {
               "id": 2,
-              "image": "food02",
+              "image": "/images/products/food02.jpg",
               "name": "soup",
               "price": 800.99,
               "discount": 890.99
           },
           {
               "id": 3,
-              "image": "food03",
+              "image": "/images/products/food03.jpg",
               "name": "pizza",
               "price": 1000.99,
               "discount": 1100.99
           },
           {
               "id": 4,
-              "image": "food04",
+              "image": "/images/products/food04.jpg",
               "name": "pasta italiana",
               "price": 330.99,
               "discount": 450.99

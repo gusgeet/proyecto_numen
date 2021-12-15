@@ -6,6 +6,9 @@ import CartItem from './cartItem';
 
 
 export const ShoppingCart = () => {
+    
+    
+
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
     const { products, cart } = state;

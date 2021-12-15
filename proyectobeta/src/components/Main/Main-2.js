@@ -1,18 +1,16 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import styled from "styled-components";
 import './Main-2.css';
 import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
 import { TYPES } from '../../actions/shoppingActions';
 import { useReducer } from 'react';
+import axios from "axios";
 
-import Product from './Product-card/Product';
+import Product from "./Product-card/Product";
 import Card from './Card-descrip/Card';
 import Modal from "../../actions/shoppingConfirm";
+import CartItem from "../shopping/cartItem";
 
-import food01 from '../../images/products/food01.jpg';
-import food02 from '../../images/products/food02.jpg';
-import food03 from '../../images/products/food03.jpg';
-import food04 from '../../images/products/food04.jpg';
 import cocineros from '../../images/cocineros.jpg';
 
 import {FaToiletPaper, FaChartPie, FaBalanceScale, FaAward, FaBell, FaCheckCircle} from 'react-icons/fa';
@@ -93,53 +91,41 @@ export const Main2 = () => {
 
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-    const { product, cart } = state;
+    const { cart } = state;
 
-    const { cartProv } = state;
-
-    // function aConfirmar (id) {
-    //     dispatch({type: TYPES.A_CONFIRMAR, payload: id})
-    //     cambiarEstadoModal1(!estadoModal1);
-        
-    // }
-    const addToCart = (id) => {
-        dispatch({type: TYPES.ADD_TO_CART, payload: id})
-        console.log(cart)
+    const deleteFromCart = (id, all = false) => {
+        // console.log(id, all)
+        if(all){
+            dispatch({type: TYPES.REMOVE_ALL, payload: id})
+        } else {
+            dispatch({type: TYPES.REMOVE_PRODUCT, payload: id})
+        }
     }
 
-   
-    const products = [
-        {
-            id: 1,
-            image: food01,
-            name: 'salad',
-            price: 550.55,
-            discount: 600.99
-        },
-        {
-            id: 2,
-            image: food02,
-            name: 'hamburguesa',
-            price: 800.99,
-            discount: 890.99
-        },
-        {
-            id: 3,
-            image: food03,
-            name: 'fruit salad',
-            price: 330.99,
-            discount: 450.99
-        },
-        {
-            id: 4,
-            image: food04,
-            name: 'gourmet style',
-            price: 1000.99,
-            discount: 1100.99
-        }
-    ]
+    const clearCart = () => {
+        dispatch({type: TYPES.CLEAR_CART})
 
-    const cardData = [
+    }
+
+    const [products, setProducts] = useState([]);
+    
+    const baseURL = "http://localhost:3000/Productos";
+
+    
+
+    useEffect(() => {
+        axios.get(baseURL).then((response) => {
+          setProducts(response.data);
+        });
+      }, []);
+    
+     const addToCart = (id) => {
+        
+         dispatch({type: TYPES.ADD_TO_CART, payload: id})
+        
+     }
+
+     const cardData = [
         {
             icon: <FaBalanceScale/>,
             title: 'Lorem ipsum dolor sit amet consectetur',
@@ -173,22 +159,16 @@ export const Main2 = () => {
                 <section>
                     <p className="title-products">Latest <snap>Offers</snap></p>
                     <div className="product-contain">
-                        {products.map((product) => {
-                            return <Product image={product.image} data={product} addToCart={() => addToCart(product.id)} />
+                       {products.map((product) => {
+                            return <Product image={product.image} data={product} addToCart={() =>addToCart(product.id)} />
                         })}
-                        <Modal 
-                        estado={estadoModal1}
-                        cambiarEstado={cambiarEstadoModal1}
-                        titulo="Confirmar compra"
-                        texto="¿Desea confirmar su compra?"
-                        price={state.cartProv.price}
                         
-                        // idCompra={ultimacompra}
-                    >
-                        {/* <Contenido>
-                            <Boton onclick={() => cambiarEstadoModal1(!estadoModal1), addToCart={addToCart}}></Boton>
-                        </Contenido> */}
 
+                        
+
+
+                    <Modal>
+                        
                     </Modal>
                     </div>
                 </section>
