@@ -1,16 +1,5 @@
-import { FaRegObjectUngroup } from 'react-icons/fa';
 import { TYPES } from '../actions/shoppingActions';
-import axios from 'axios';
-import ProductBase from './productBase';
-
-const baseURL = "http://localhost:3001/Productos";
-
-let productos = axios.get(baseURL)
-.then(response => {
-    const data = response.data.map(el => el);
-    console.log(data)
-    return data;
-});
+import CartItem from '../components/shopping/cartItem';
 
 /* let productos = async () => {
     try {
@@ -23,19 +12,50 @@ let productos = axios.get(baseURL)
     
 } */
 
+
 //revisar products o el llamado al array, da error al hacer click
 export const shoppingInitialState = {
-    products: productos,
+    
+    products: [
+        {
+            id: 1,
+            image: "/images/products/food01.jpg",
+            name: "salad",
+            price: 550.55
+        },
+        {
+            id: 2,
+            image: "/images/products/food02.jpg",
+            name: "burguer",
+            price: 800.99
+        },
+        {
+            id: 3,
+            image: "/images/products/food03.jpg",
+            name: "fruit salad",
+            price: 650.99
+        },
+        {
+            id: 4,
+            image: "/images/products/food04.jpg",
+            name: "gourmet style",
+            price: 330.99
+        }
+    ],
     cart: [],
-    cartProv: []
+    cartProv: [],
+    
 };
 
+
+
+
 export function shoppingReducer(state, action){
+
     switch (action.type) {
         
         case TYPES.ADD_TO_CART:{
             let newItem = state.products.find((product) => product.id === action.payload)
-            console.log(newItem)
             let itemInCart = state.cart.find((item) => item.id === newItem.id)
             
             return itemInCart ? {

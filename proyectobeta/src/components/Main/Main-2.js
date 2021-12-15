@@ -8,7 +8,7 @@ import axios from "axios";
 
 import Product from "./Product-card/Product";
 import Card from './Card-descrip/Card';
-import Modal from "../../actions/shoppingConfirm";
+import CartItem from './../shopping/cartItem';
 
 import cocineros from '../../images/cocineros.jpg';
 
@@ -108,19 +108,21 @@ export const Main2 = () => {
 
     const [products, setProducts] = useState([]);
     
-    const baseURL = "http://localhost:3001/Productos";
+    const baseURL = "http://localhost:3000/Productos";
 
     
 
     useEffect(() => {
         axios.get(baseURL).then((response) => {
           setProducts(response.data);
+          
         });
       }, []);
     
      const addToCart = (id) => {
         //console.log(id)
          dispatch({type: TYPES.ADD_TO_CART, payload: id})
+         
         
      }
 
@@ -159,15 +161,20 @@ export const Main2 = () => {
                     <p className="title-products">Latest <snap>Offers</snap></p>
                     <div className="product-contain">
                        {products.map((product) => {
-                            return <Product image={product.image} data={product} addToCart={() =>addToCart(product.id)} />
+                            return <Product image={product.image} key={product.id} data={product} addToCart={() =>addToCart(product.id)} />
                         })}
-                        
-                    <Modal>
-                        
-                    </Modal>
                     </div>
+                    <>
+           
+        </>
                 </section>
+                
                 <section>
+                <h3>Carrito</h3>
+                    <div className='box'>
+                        {cart.map((item, index) => <CartItem key={index} data={item} deleteFromCart={deleteFromCart}/>)}
+                        <button onClick={() => clearCart}>Eliminar carro</button>
+                    </div>
                 <p className="title-products">Why Choose <snap>the Premium Bakery Quality</snap></p>
                 <div className="card-contain">
                     {cardData.map(el => {

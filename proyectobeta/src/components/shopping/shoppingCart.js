@@ -6,8 +6,6 @@ import CartItem from './cartItem';
 
 export const ShoppingCart = () => {
     
-    
-
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
     const { products, cart } = state;
@@ -30,7 +28,7 @@ export const ShoppingCart = () => {
             <h3>Carrito</h3>
             <div className='box'>
                 {cart.map((item, index) => <CartItem key={index} data={item} deleteFromCart={deleteFromCart}/>)}
-                <button onClick={() => clearCart}>Eliminar carro</button>
+                <button onClick={() => clearCart()}>Eliminar carro</button>
             </div>
         </>
     )

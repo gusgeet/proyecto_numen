@@ -3,28 +3,28 @@
       {
               "id": 1,
               "image": "/images/products/food01.jpg",
-              "name": "burguer",
+              "name": "salad",
               "price": 550.55,
               "discount": 600.99
           },
           {
               "id": 2,
               "image": "/images/products/food02.jpg",
-              "name": "soup",
+              "name": "burguer",
               "price": 800.99,
               "discount": 890.99
           },
           {
               "id": 3,
               "image": "/images/products/food03.jpg",
-              "name": "pizza",
-              "price": 1000.99,
+              "name": "fruit salad",
+              "price": 650.99,
               "discount": 1100.99
           },
           {
               "id": 4,
               "image": "/images/products/food04.jpg",
-              "name": "pasta italiana",
+              "name": "gourmet style",
               "price": 330.99,
               "discount": 450.99
           }
