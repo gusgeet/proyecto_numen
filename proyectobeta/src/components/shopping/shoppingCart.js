@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
 import { TYPES } from '../../actions/shoppingActions';
-import { useReducer } from 'react';
 import CartItem from './cartItem';
 
 
@@ -14,7 +13,6 @@ export const ShoppingCart = () => {
     const { products, cart } = state;
 
     const deleteFromCart = (id, all = false) => {
-        // console.log(id, all)
         if(all){
             dispatch({type: TYPES.REMOVE_ALL, payload: id})
         } else {

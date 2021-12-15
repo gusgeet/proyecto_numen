@@ -9,11 +9,11 @@ import axios from "axios";
 import Product from "./Product-card/Product";
 import Card from './Card-descrip/Card';
 import Modal from "../../actions/shoppingConfirm";
-import CartItem from "../shopping/cartItem";
 
 import cocineros from '../../images/cocineros.jpg';
 
 import {FaToiletPaper, FaChartPie, FaBalanceScale, FaAward, FaBell, FaCheckCircle} from 'react-icons/fa';
+import ShoppingCart from "../shopping/shoppingCart";
 
 const Container = styled.div`
     margin: 0 auto;
@@ -87,14 +87,13 @@ const Container2 = styled.div`
 
 export const Main2 = () => {
 
-    const [estadoModal1, cambiarEstadoModal1] = useState(false);
+    //const [estadoModal1, cambiarEstadoModal1] = useState(false);
 
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
     const { cart } = state;
 
     const deleteFromCart = (id, all = false) => {
-        // console.log(id, all)
         if(all){
             dispatch({type: TYPES.REMOVE_ALL, payload: id})
         } else {
@@ -109,7 +108,7 @@ export const Main2 = () => {
 
     const [products, setProducts] = useState([]);
     
-    const baseURL = "http://localhost:3000/Productos";
+    const baseURL = "http://localhost:3001/Productos";
 
     
 
@@ -120,7 +119,7 @@ export const Main2 = () => {
       }, []);
     
      const addToCart = (id) => {
-        
+        //console.log(id)
          dispatch({type: TYPES.ADD_TO_CART, payload: id})
         
      }
@@ -163,10 +162,6 @@ export const Main2 = () => {
                             return <Product image={product.image} data={product} addToCart={() =>addToCart(product.id)} />
                         })}
                         
-
-                        
-
-
                     <Modal>
                         
                     </Modal>

@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ProductBase = ({data}) => {
 
     const {id} = data;

@@ -1,28 +1,31 @@
 import { FaRegObjectUngroup } from 'react-icons/fa';
 import { TYPES } from '../actions/shoppingActions';
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductBase from './productBase';
 
-const baseURL = "http://localhost:3000/Productos";
+const baseURL = "http://localhost:3001/Productos";
 
-// useEffect(() => {
-//     axios.get(baseURL).then((response) => {
-//     setProducts(response.data);
-//     });
+let productos = axios.get(baseURL)
+.then(response => {
+    const data = response.data.map(el => el);
+    console.log(data)
+    return data;
+});
+
+/* let productos = async () => {
+    try {
+        const response = await axios.get(baseURL)
+        return response.data
+        
+    } catch (error) {
+        console.log(error)
+    }
     
-// }, [])
+} */
 
-let products = axios.get(baseURL).
-            then((response) => {
-                return response.data.map((el) => 
-                <ProductBase id={el.id} />)
-    })
-
-
-    //revisar products o el llamado al array, da error al hacer click
+//revisar products o el llamado al array, da error al hacer click
 export const shoppingInitialState = {
-    products: [],
+    products: productos,
     cart: [],
     cartProv: []
 };
@@ -31,9 +34,10 @@ export function shoppingReducer(state, action){
     switch (action.type) {
         
         case TYPES.ADD_TO_CART:{
-            let newItem = state.products.find(product => product.id === action.payload)
+            let newItem = state.products.find((product) => product.id === action.payload)
+            console.log(newItem)
             let itemInCart = state.cart.find((item) => item.id === newItem.id)
-
+            
             return itemInCart ? {
                 ...state, 
                 cart: state.cart.map((item) => item.id === newItem.id 
@@ -46,7 +50,7 @@ export function shoppingReducer(state, action){
                 cart: [...state.cart , {...newItem, quantity: 1}]
             };
         }
-
+        
         case TYPES.REMOVE_PRODUCT:{
             let itemToDelete = state.cart.find((item) => item.id === action.payload)
             
@@ -63,18 +67,18 @@ export function shoppingReducer(state, action){
                 cart: state.cart.filter(item => item.id !== action.payload)
             }
         }
-
+        
         case TYPES.REMOVE_ALL:{
             return {...state, 
-            cart: state.cart.filter(item => item.id !== action.payload)
+                cart: state.cart.filter(item => item.id !== action.payload)
             }
         }
-
+        
         case TYPES.CLEAR_CART:{
             return shoppingInitialState;
         }
-    
+        
         default:
-            return state;
+        return state;
     }
 }
