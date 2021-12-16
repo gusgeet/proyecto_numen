@@ -15,7 +15,7 @@ const Product = ({data, addToCart, cambiarEstadoModal1}) => {
             <div className="price">
                 <p>${price} <snap>${discount}</snap> </p>
             </div>
-            <Button onClick={() => addToCart(id), cambiarEstadoModal1()} >Comprar</Button>
+            <Button onClick={(e) => addToCart(id, cambiarEstadoModal1)} >Comprar</Button>
         </div>
     )
 }

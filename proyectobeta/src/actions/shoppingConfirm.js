@@ -14,9 +14,6 @@ const Modal = ({
 
   /*   const { product, cartProv } = state; */
 
-    
-
-    
     const addToCart = () => {
         dispatch({type: TYPES.ADD_TO_CART, payload: id})
     }
@@ -35,8 +32,9 @@ const Modal = ({
                     <Encabezado>
                         <h3>Confirmar</h3>
                         <h4>{state.cartProv.name}</h4>
+                        <h4>$ {state.cartProv.price}</h4>
                     </Encabezado>
-                    <Button onClick={() => addToCart()}>HAGA CLICK</Button>
+                    <Button onClick={() => addToCart()}>Confirmar</Button>
                 </Contenedor>
             </Overlay>
             }

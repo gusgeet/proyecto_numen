@@ -104,19 +104,19 @@ export const Main2 = () => {
 
     const [products, setProducts] = useState([]);
     
-    const baseURL = "http://localhost:3001/Productos";
+    const baseURL = "http://localhost:3000/Productos";
 
     
 
     useEffect(() => {
         axios.get(baseURL).then((response) => {
           setProducts(response.data);
+          
         });
       }, []);
     
-     const addToCart = (id) => {
-        //console.log(id)
-         dispatch({type: TYPES.ADD_TO_CART, payload: id})
+     const addToCart = (id, estadoModal1) => {
+        dispatch({type: TYPES.ADD_TO_CART, payload: id})
         
      }
 
@@ -155,12 +155,29 @@ export const Main2 = () => {
                     <p className="title-products">Latest <snap>Offers</snap></p>
                     <div className="product-contain">
                        {products.map((product) => {
-                            return <Product image={product.image} data={product} addToCart={() =>addToCart(product.id)} />
+                            return <Product image={product.image} key={product.id} data={product} addToCart={() =>cambiarEstadoModal1(product, !estadoModal1)} />
                         })}
                         {console.log(cart)} {/* muestra por consola los productos agregados al carrito */}
                     </div>
+                    <>
+                        <Modal
+                            estado={estadoModal1}
+                            cambiarEstado={cambiarEstadoModal1}
+                            products
+                            >
+                        <>
+                            
+                        </>
+                        </Modal>
+                    </>
                 </section>
+                
                 <section>
+                <h3>Carrito</h3>
+                    <div className='box'>
+                        {cart.map((item, index) => <CartItem key={index} data={item} deleteFromCart={deleteFromCart}/>)}
+                        {/* <button onClick={}>Eliminar carro</button> */}
+                    </div>
                 <p className="title-products">Why Choose <snap>the Premium Bakery Quality</snap></p>
                 <div className="card-contain">
                     {cardData.map(el => {
