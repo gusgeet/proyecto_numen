@@ -1,19 +1,18 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import styled from "styled-components";
 import './Main-2.css';
 import { shoppingInitialState, shoppingReducer } from '../../reducer/shoppingReducer'
 import { TYPES } from '../../actions/shoppingActions';
-import { useReducer } from 'react';
 import axios from "axios";
+import { useAppContext } from '../../AppContext';
 
 import Product from "./Product-card/Product";
 import Card from './Card-descrip/Card';
-import Modal from "../../actions/shoppingConfirm";
+import CartItem from '../shopping/cartItem';
 
 import cocineros from '../../images/cocineros.jpg';
 
 import {FaToiletPaper, FaChartPie, FaBalanceScale, FaAward, FaBell, FaCheckCircle} from 'react-icons/fa';
-import ShoppingCart from "../shopping/shoppingCart";
 
 const Container = styled.div`
     margin: 0 auto;
@@ -82,18 +81,15 @@ const Container2 = styled.div`
     grid-template-columns: repeat(2, 2fr);
 }
 `
-
-
-
 export const Main2 = () => {
-
-    //const [estadoModal1, cambiarEstadoModal1] = useState(false);
 
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
     const { cart } = state;
 
-    const deleteFromCart = (id, all = false) => {
+    const { viewCarrito } = useAppContext();
+
+    const deleteFromCart = (id, all = false) => { // dar condicion en modal falta
         if(all){
             dispatch({type: TYPES.REMOVE_ALL, payload: id})
         } else {
@@ -161,10 +157,7 @@ export const Main2 = () => {
                        {products.map((product) => {
                             return <Product image={product.image} data={product} addToCart={() =>addToCart(product.id)} />
                         })}
-                        
-                    <Modal>
-                        
-                    </Modal>
+                        {console.log(cart)} {/* muestra por consola los productos agregados al carrito */}
                     </div>
                 </section>
                 <section>
@@ -194,9 +187,15 @@ export const Main2 = () => {
                     <button>Descubre más</button>
                     </div>
                 <div>        
-                    <img className="imagen-cocina" src={cocineros}/>
+                    <img className="imagen-cocina" src={cocineros} alt="img"/>
                 </div>
             </Container2>
+            {console.log(viewCarrito)} {/* muestra lo que trae de useAppContext() */}
+            <div className={ viewCarrito === true ? 'modal modal-active' : 'modal'}>
+                <div className="content-modal">
+                    {cart.map(el => <CartItem data={el} deleteFromCart={deleteFromCart} clearCart={clearCart}/>)}
+                </div>
+            </div>
             </>
         
     )

@@ -1,31 +1,36 @@
-import { FaRegObjectUngroup } from 'react-icons/fa';
 import { TYPES } from '../actions/shoppingActions';
-import axios from 'axios';
-import ProductBase from './productBase';
 
-const baseURL = "http://localhost:3001/Productos";
-
-let productos = axios.get(baseURL)
-.then(response => {
-    const data = response.data.map(el => el);
-    console.log(data)
-    return data;
-});
-
-/* let productos = async () => {
-    try {
-        const response = await axios.get(baseURL)
-        return response.data
-        
-    } catch (error) {
-        console.log(error)
-    }
-    
-} */
-
-//revisar products o el llamado al array, da error al hacer click
 export const shoppingInitialState = {
-    products: productos,
+    products: [
+        {
+                "id": 1,
+                "image": "/images/products/food01.jpg",
+                "name": "burguer",
+                "price": 550.55,
+                "discount": 600.99
+            },
+            {
+                "id": 2,
+                "image": "/images/products/food02.jpg",
+                "name": "soup",
+                "price": 800.99,
+                "discount": 890.99
+            },
+            {
+                "id": 3,
+                "image": "/images/products/food03.jpg",
+                "name": "pizza",
+                "price": 1000.99,
+                "discount": 1100.99
+            },
+            {
+                "id": 4,
+                "image": "/images/products/food04.jpg",
+                "name": "pasta italiana",
+                "price": 330.99,
+                "discount": 450.99
+            }
+      ],
     cart: [],
     cartProv: []
 };
@@ -49,6 +54,7 @@ export function shoppingReducer(state, action){
                 ...state,
                 cart: [...state.cart , {...newItem, quantity: 1}]
             };
+            
         }
         
         case TYPES.REMOVE_PRODUCT:{

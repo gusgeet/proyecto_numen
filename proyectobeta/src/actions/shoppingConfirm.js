@@ -4,9 +4,6 @@ import { FaWindowClose } from 'react-icons/fa';
 import Button from '../components/Button';
 import { TYPES } from './shoppingActions';
 import { shoppingInitialState, shoppingReducer } from '../reducer/shoppingReducer';
-import Product from '../components/Main/Product-card/Product';
-
-
 
 const Modal = ({
     children, 
@@ -15,7 +12,7 @@ const Modal = ({
     }) => {
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
 
-    const { product, cartProv } = state;
+  /*   const { product, cartProv } = state; */
 
     
 

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import Banner from "../../images/platoservido.jpg";
 import './Main-4.css';
 import Button from "../Button";
@@ -12,7 +11,7 @@ class Main4 extends Component {
            <>
             <div className="container">
                 <div className="contenedor">
-                    <img className="imagen" src={Banner}></img>
+                    <img className="imagen" src={Banner} alt='img'></img>
                     <div className="textos">
                         <p className="title-1">Sorprende a alguien de tu hogar</p>
                         <p className="title-2">con este plato que casi habla</p>

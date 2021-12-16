@@ -2,6 +2,7 @@ import React from 'react';
 import Button from "../Button";
 
 const CartItem = ({data, deleteFromCart}) => {
+    
     const {id, name, price, quantity} = data;
 
     return (

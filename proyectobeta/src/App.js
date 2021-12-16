@@ -10,33 +10,34 @@ import MainX from "./components/Main/Main-X";
 import { GlobalStyles } from "./global-styles";
 import { FooterContainer } from "./container/footer";
 import { FaTimes } from "react-icons/fa";
-import ShoppingCart from "./components/shopping/shoppingCart";
+import { AppContextProvider } from "./AppContext";
 
 function App() {
 
   const [publication, setPublication ] = useState(true);
 
   return (
-    <div className="App">
-      {
-        publication === true ?
-        <div className="header-text">
-            <p>Delivery gratis en órdenes superiores a $50000. Regalo con su compra mayor a $75000</p>
-            <div className="icon-close" onClick={ () => setPublication(!publication) }><FaTimes/></div>
-        </div> :
-        null
-      }
-      <Navbar />
-      <Main1 />
-      <ShoppingCart/>
-      <Main2 />
-      <Main3/>
-      <Main4/>
-      <Carousel/>
-      <MainX/>
-      <GlobalStyles />
-      <FooterContainer/>
-    </div>   
+    <AppContextProvider>
+      <div className="App">
+        {
+          publication === true ?
+          <div className="header-text">
+              <p>Delivery gratis en órdenes superiores a $50000. Regalo con su compra mayor a $75000</p>
+              <div className="icon-close" onClick={ () => setPublication(!publication) }><FaTimes/></div>
+          </div> :
+          null
+        }
+        <Navbar />
+        <Main1 />
+        <Main2 />
+        <Main3/>
+        <Main4/>
+        <Carousel/>
+        <MainX/>
+        <GlobalStyles />
+        <FooterContainer/>
+      </div>  
+    </AppContextProvider> 
   );
 }
 
