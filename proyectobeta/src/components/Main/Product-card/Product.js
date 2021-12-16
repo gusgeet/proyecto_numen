@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Button from '../../Button';
 import './Product.css';
 
@@ -6,8 +6,6 @@ import './Product.css';
 
 const Product = ({data, addToCart}) => {
 
-
-    const [estadoModal1, cambiarEstadoModal1] = useState(false, []);
     const {id, image, name, price, discount} = data;
 
     return (
@@ -17,7 +15,7 @@ const Product = ({data, addToCart}) => {
             <div className="price">
                 <p>${price} <snap>${discount}</snap> </p>
             </div>
-            <Button onClick={(e) => addToCart(id, cambiarEstadoModal1)}>Comprar</Button>
+            <Button onClick={() => addToCart(id)}>Comprar</Button>
         </div>
     )
 }

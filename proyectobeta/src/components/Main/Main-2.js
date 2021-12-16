@@ -104,7 +104,7 @@ export const Main2 = () => {
 
     const [products, setProducts] = useState([]);
     
-    const baseURL = "http://localhost:3000/Productos";
+    const baseURL = "http://localhost:3001/Productos";
 
     
 
@@ -115,7 +115,7 @@ export const Main2 = () => {
         });
       }, []);
     
-     const addToCart = (id, estadoModal1) => {
+     const addToCart = (id) => {
         dispatch({type: TYPES.ADD_TO_CART, payload: id})
         
      }
@@ -155,29 +155,13 @@ export const Main2 = () => {
                     <p className="title-products">Latest <snap>Offers</snap></p>
                     <div className="product-contain">
                        {products.map((product) => {
-                            return <Product image={product.image} key={product.id} data={product} addToCart={() =>cambiarEstadoModal1(product, !estadoModal1)} />
+                            return <Product image={product.image} key={product.id} data={product} addToCart={() => addToCart(product.id)} />
                         })}
                         {console.log(cart)} {/* muestra por consola los productos agregados al carrito */}
                     </div>
-                    <>
-                        <Modal
-                            estado={estadoModal1}
-                            cambiarEstado={cambiarEstadoModal1}
-                            products
-                            >
-                        <>
-                            
-                        </>
-                        </Modal>
-                    </>
                 </section>
                 
                 <section>
-                <h3>Carrito</h3>
-                    <div className='box'>
-                        {cart.map((item, index) => <CartItem key={index} data={item} deleteFromCart={deleteFromCart}/>)}
-                        {/* <button onClick={}>Eliminar carro</button> */}
-                    </div>
                 <p className="title-products">Why Choose <snap>the Premium Bakery Quality</snap></p>
                 <div className="card-contain">
                     {cardData.map(el => {
@@ -210,7 +194,7 @@ export const Main2 = () => {
             {console.log(viewCarrito)} {/* muestra lo que trae de useAppContext() */}
             <div className={ viewCarrito === true ? 'modal modal-active' : 'modal'}>
                 <div className="content-modal">
-                    {cart.map(el => <CartItem data={el} deleteFromCart={deleteFromCart} clearCart={clearCart}/>)}
+                    {cart.map((el,index) => <CartItem data={el} deleteFromCart={deleteFromCart} clearCart={clearCart} key={index}/>)}
                 </div>
             </div>
             </>
