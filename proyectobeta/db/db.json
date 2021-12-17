@@ -4,28 +4,28 @@
               "id": 1,
               "image": "/images/products/food01.jpg",
               "name": "salad",
-              "price": 550.55,
+              "price": 550.50,
               "discount": 600.99
           },
           {
               "id": 2,
               "image": "/images/products/food02.jpg",
               "name": "burguer",
-              "price": 800.99,
+              "price": 800.50,
               "discount": 890.99
           },
           {
               "id": 3,
               "image": "/images/products/food03.jpg",
               "name": "fruit salad",
-              "price": 650.99,
+              "price": 650.50,
               "discount": 1100.99
           },
           {
               "id": 4,
               "image": "/images/products/food04.jpg",
               "name": "gourmet style",
-              "price": 330.99,
+              "price": 330.50,
               "discount": 450.99
           }
     ]

@@ -24,6 +24,8 @@ const AppContextProvider = ({children}) => {
 
     const [ state, dispatch ] = useReducer(contextReducer, InitialStateContextReducer);
 
+    const [ dispatcha ] = useReducer(contextReducer, InitialStateContextReducer);
+
     return (
         <BookContext.Provider value={{viewCarrito: state.viewCarrito, dispatch}}>
             {children}

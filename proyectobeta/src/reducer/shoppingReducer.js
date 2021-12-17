@@ -5,29 +5,29 @@ export const shoppingInitialState = {
         {
                 "id": 1,
                 "image": "/images/products/food01.jpg",
-                "name": "burguer",
-                "price": 550.55,
+                "name": "salad",
+                "price": 550.50,
                 "discount": 600.99
             },
             {
                 "id": 2,
                 "image": "/images/products/food02.jpg",
-                "name": "soup",
-                "price": 800.99,
+                "name": "burguer",
+                "price": 800.50,
                 "discount": 890.99
             },
             {
                 "id": 3,
                 "image": "/images/products/food03.jpg",
-                "name": "pizza",
-                "price": 1000.99,
+                "name": "fruit salad",
+                "price": 650.50,
                 "discount": 1100.99
             },
             {
                 "id": 4,
                 "image": "/images/products/food04.jpg",
-                "name": "pasta italiana",
-                "price": 330.99,
+                "name": "gourmet style",
+                "price":  330.50,
                 "discount": 450.99
             }
       ],
@@ -41,8 +41,9 @@ export const shoppingInitialState = {
 
 export function shoppingReducer(state, action){
 
+    
+
     switch (action.type) {
-        
         case TYPES.ADD_TO_CART:{
             let newItem = state.products.find((product) => product.id === action.payload)
             let itemInCart = state.cart.find((item) => item.id === newItem.id)
@@ -75,12 +76,19 @@ export function shoppingReducer(state, action){
             : {
                 ...state, 
                 cart: state.cart.filter(item => item.id !== action.payload)
+                
             }
         }
         
         case TYPES.REMOVE_ALL:{
-            return {...state, 
+            let itemsInCart = state.cart.quantity
+
+            return itemsInCart != 0 ? {...state, 
                 cart: state.cart.filter(item => item.id !== action.payload)
+            } : {
+                ...state, 
+                cart: state.cart.filter(item => item.id !== action.payload)
+                
             }
         }
         
@@ -92,3 +100,4 @@ export function shoppingReducer(state, action){
         return state;
     }
 }
+

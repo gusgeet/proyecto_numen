@@ -65,6 +65,13 @@ button{
     margin-bottom: 15px
 }
 
+.buttonClose{
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 0.3rem 0.5rem;
+    
+}
+
 button:hover{
     color: #fff;
     transition: 250ms ease-in;
@@ -76,7 +83,8 @@ button:hover{
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 0;
     background-color: rgba(0, 0, 0, .5);
     display: none;
 }

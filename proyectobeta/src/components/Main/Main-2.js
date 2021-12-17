@@ -87,7 +87,7 @@ export const Main2 = () => {
 
     const { cart } = state;
 
-    const { viewCarrito } = useAppContext();
+    const { viewCarrito } = useAppContext(); 
 
     const deleteFromCart = (id, all = false) => { // dar condicion en modal falta
         if(all){
@@ -104,9 +104,18 @@ export const Main2 = () => {
 
     const [products, setProducts] = useState([]);
     
-    const baseURL = "http://localhost:3001/Productos";
+    const baseURL = "http://localhost:3000/Productos";
 
-    
+    function changeClass() {
+       if(document.getElementById('newModal').className != "modal modal-active"){
+           document.getElementById('newModal').className = "modal modal-active"
+           var modal_class = document.getElementById('newModal').className
+       }
+       else {
+        document.getElementById('newModal').className = "modal"
+        var modal_class = document.getElementById('newModal').className
+       }
+    }
 
     useEffect(() => {
         axios.get(baseURL).then((response) => {
@@ -191,10 +200,18 @@ export const Main2 = () => {
                     <img className="imagen-cocina" src={cocineros} alt="img"/>
                 </div>
             </Container2>
-            {console.log(viewCarrito)} {/* muestra lo que trae de useAppContext() */}
-            <div className={ viewCarrito === true ? 'modal modal-active' : 'modal'}>
+            {console.log(viewCarrito)} muestra lo que trae de useAppContext()
+            <div id='newModal' className={ viewCarrito === true ? 'modal modal-active' : 'modal'}>
                 <div className="content-modal">
-                    {cart.map((el,index) => <CartItem data={el} deleteFromCart={deleteFromCart} clearCart={clearCart} key={index}/>)}
+                    <h6>Carrito</h6>
+                    {cart.map((el,index) => 
+                    <CartItem 
+                        data={el} 
+                        deleteFromCart={deleteFromCart} 
+                        clearCart={clearCart} 
+                        key={index}
+                        />)}
+                        <button className="buttonClose" onClick={() => changeClass() }>Cerrar</button>
                 </div>
             </div>
             </>
