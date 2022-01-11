@@ -80,8 +80,8 @@ const Logos = (props) => {
                 <p>Contáles a tus conocidos lo rico que som... Contáles de nosotros</p>
                 </div>
             <div className="logo-contain">
-                    {logo.map((el,index) => {
-                    return <Logos image={el.image} src={el.link} key={index}/> 
+                    {logo.map(el => {
+                    return <Logos image={el.image} src={el.link}/> 
                     })}
             </div>
             </Container>

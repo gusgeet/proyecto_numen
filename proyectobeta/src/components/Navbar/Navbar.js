@@ -10,6 +10,8 @@ const Navbar = () => {
     const { dispatch } = useAppContext();
 
     const [menuIcon, setMenuIcon] = useState(false);
+
+    const [searchBar, setMenuBar] = useState(false);
     //console.log(state.viewCarrito); //me trae todo el contenido del reducer shoppingInitialState, agregando la dot notation puedo acceder a la prop del objeto
 
         return(
@@ -39,10 +41,10 @@ const Navbar = () => {
                         )
                     })}
                 </ul>
-                <input className="form_show"></input>
+                <input className={searchBar === true ? 'form_notshow' : 'form_show'}></input>
 
                 <button class="rounded-button" type="button">
-                    <FaSearch className="buttonSearch" />
+                    <FaSearch className="buttonSearch" onClick={() => setMenuBar(!searchBar) } />
                 </button>
                 
                 <button class="rounded-button" type="button">

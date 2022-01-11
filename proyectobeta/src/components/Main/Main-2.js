@@ -126,6 +126,7 @@ export const Main2 = () => {
     
      const addToCart = (id) => {
         dispatch({type: TYPES.ADD_TO_CART, payload: id})
+        changeClass();
         
      }
 
@@ -166,7 +167,6 @@ export const Main2 = () => {
                        {products.map((product) => {
                             return <Product image={product.image} key={product.id} data={product} addToCart={() => addToCart(product.id)} />
                         })}
-                        {console.log(cart)} {/* muestra por consola los productos agregados al carrito */}
                     </div>
                 </section>
                 
@@ -200,10 +200,10 @@ export const Main2 = () => {
                     <img className="imagen-cocina" src={cocineros} alt="img"/>
                 </div>
             </Container2>
-            {console.log(viewCarrito)} muestra lo que trae de useAppContext()
+           
             <div id='newModal' className={ viewCarrito === true ? 'modal modal-active' : 'modal'}>
                 <div className="content-modal">
-                    <h6>Carrito</h6>
+                    <h3>Carrito</h3>
                     {cart.map((el,index) => 
                     <CartItem 
                         data={el} 
@@ -211,7 +211,7 @@ export const Main2 = () => {
                         clearCart={clearCart} 
                         key={index}
                         />)}
-                        <button className="buttonClose" onClick={() => changeClass() }>Cerrar</button>
+                    <button className="buttonClose" onClick={() => changeClass() }>Cerrar</button>
                 </div>
             </div>
             </>
